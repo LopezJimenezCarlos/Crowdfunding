@@ -19,10 +19,18 @@ html{
     border-radius: 20px;
     align-content: center
 }
-.item_barra{
+.item_barra {
     margin: 7px;
     padding: 5px;
+    font-size: 20px; /* Tamaño original del texto */
+    transition: font-size 0.7s; /* Transición al tamaño original */
 }
+
+.item_barra:hover {
+    font-size: 25px; /* Tamaño del texto al pasar el ratón */
+    transition: font-size 0.7s; /* Transición al tamaño más grande */
+}
+
 .nav__link {
     text-decoration: none;
     color: white; /* Color del texto */
