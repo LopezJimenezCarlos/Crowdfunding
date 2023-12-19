@@ -16,14 +16,18 @@
 }
 
 .form-content{
-    width: 100%;
+    width: 80%;
     height: 450px;
-    background: #2C2F35;
+    background: #2e2d2d;
     padding: 50px 60px 70PX;
     text-align: center;
     border-radius: 25px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.2);
 }
 
+#title{
+    color: #ffffff;
+}
 form-content h1{
     font-size: 30px;
     margin-bottom: 60px;
@@ -45,7 +49,7 @@ form-content h1::after{
 
 .input-field {
     background-color: #515966;
-    margin: 15 px 0;
+    margin: 5px 0;
     border-radius: 3px;
     display: flex;
     align-items: center;
@@ -86,6 +90,17 @@ form p a {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+#signUp:hover{
+    background-color: #07563a;
+    color: #ffffff;
+    transition: 0.3s;
+    
+}
+#signIn:hover{
+    background-color: #a2a2a2;
+    transition: 0.3s;
+    
 }
 
 .btn-field button{

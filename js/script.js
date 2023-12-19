@@ -6,7 +6,7 @@ function scrollFunction() {
         barraSuperior.style.transition = "height 0.5s"; // Transición de 0.5 segundos
         logo.style.width = "60px"; // Tamaño más pequeño al hacer scroll        
         logo.style.height = "50px"; // Tamaño más pequeño al hacer scroll
-        logo.style.transition = "0.6s"; // Transición de 0.5 segundos
+        logo.style.transition = " 0.6s"; // Transición de 0.5 segundos
         logo.style.position = "relative"; // Transición de 0.5 segundos
         barraSuperior.style.boxShadow=" 0px 5px 3px rgba(0, 0, 0, 0.2)";
     } else {
@@ -17,6 +17,7 @@ function scrollFunction() {
     }   
 }
 window.onscroll = function() {
+
     scrollFunction();
 };
 // Supongamos que 'filas' es la respuesta del servidor
@@ -35,3 +36,6 @@ function toggleBusqueda() {
     linkBuscar.style.display = campoBusqueda.classList.contains('mostrar') ? 'none' : 'inline';
 }
 
+
+
+    

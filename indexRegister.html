@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
 
-    <link href = "css/styleRegister.css" rel="stylesheet" type="text/css">
+    <link href = "css/style.css" rel="stylesheet" type="text/css">
     <!--Libreria para tipografia-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
 </head>
 <body>
-
+    <header>
+        <nav>
+            <ul class="barra_superior" id="barraSuperior">
+                <li class="item_barra" id="buscarItem" onclick="toggleBusqueda()">
+                <input type="text" id="campoBusqueda" placeholder="Buscar">
+                <a class="nav__link" id="linkBuscar">Buscar</a>
+                </li>
+                <li class="item_barra"><a href="index.php" class="nav__link">Sobre Nosotros</a></li>
+                <li class="item_barra"><a href="#" class="nav__link">Donar</a></li>
+                <li><img src="logo1.png" id="logo" height="95" width="100px"></li>
+                <li class="item_barra"><a href="#" class="nav__link">Cómo funcionamos</a></li>
+                <li class="item_barra"><a href="indexRegister.html" class="nav__link">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class = "container">
         <div class="form-content">
             <h1 id = "title">Registro</h1>

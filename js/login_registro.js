@@ -17,5 +17,5 @@ signUp.onclick = function () {
     title.innerHTML = "Registro";
     signUp.classList.remove("disanble");
     signIn.classList.add("disanble");
-    alert("Se ha registrado correctamente")
+    
 }
