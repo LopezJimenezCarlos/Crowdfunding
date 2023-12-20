@@ -21,10 +21,10 @@ window.onscroll = function() {
     scrollFunction();
 };
 // Supongamos que 'filas' es la respuesta del servidor
-var filas = respuestaDelServidor;
+/*var filas = respuestaDelServidor;
 
 var nombre = document.getElementById("Usuario");
-nombre.innerText = filas[0].nombre;
+nombre.innerText = filas[0].nombre;*/
 
 function toggleBusqueda() {
     const campoBusqueda = document.getElementById('campoBusqueda');
@@ -36,6 +36,25 @@ function toggleBusqueda() {
     linkBuscar.style.display = campoBusqueda.classList.contains('mostrar') ? 'none' : 'inline';
 }
 
+window.onload = function() {
+    const intervalo = 2000; // Intervalo en milisegundos (1 segundo)
+    const imagenes = document.getElementsByClassName('imagen');
+    let index = 0;
 
+    function desplazarImagenes() {
+        // Reiniciar opacidad de todas las imágenes
+        for (let i = 0; i < imagenes.length; i++) {
+            imagenes[i].style.opacity = 0;
+            imagenes[i].style.zIndex = 0;
+        }
 
-    
+        // Aparecer la siguiente imagen
+        imagenes[index].style.opacity = 1;
+        imagenes[index].style.zIndex = 1;
+
+        // Actualizar el índice para la siguiente imagen
+        index = (index + 1) % imagenes.length;
+    }
+
+    setInterval(desplazarImagenes, intervalo);
+};
