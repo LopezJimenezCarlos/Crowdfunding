@@ -227,7 +227,7 @@ height: 250px;
     margin: 0 auto; /* Centrar horizontalmente */
     position: relative; /* Agregado para manejar las imágenes de forma absoluta */
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 254, 254, 0.9); /* 70% de opacidad */
+    background-color: rgb(251, 251, 251); /* 70% de opacidad */
     opacity: 0.9;
 }
 
@@ -268,4 +268,40 @@ height: 250px;
     text-align: center;
     margin-top: 10px;
     text-shadow: #04551f 2px 2px 4px;
+}
+.donaciones{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    text-shadow: #080000 2px 2px 12px;
+    color:#F4DFC8;
+    margin: 30px;
+}
+
+.contenedor_donadores {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no hay espacio suficiente */
+    justify-content: space-evenly; /* Distribuye los elementos con espacio entre ellos */
+    /* Puedes ajustar estas propiedades según tus necesidades */
+    margin: 30px;
+}
+
+.donador{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F4EAE0;
+    padding: 10px;
+    height: 100px;
+    width: 300px;
+    border-radius: 7px;
+    font-size: 24px;
+    font-weight: bold;
+    color:#ffffff;
+    text-shadow: #000000  1px 1px 2px;
+    text-align: center;
+    box-shadow: #000000 5px 5px 15px;
+    margin: 10px;
 }
