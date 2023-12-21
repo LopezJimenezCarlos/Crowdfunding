@@ -37,8 +37,8 @@ function toggleBusqueda() {
 }
 
 window.onload = function() {
-    const intervalo = 2000; // Intervalo en milisegundos (1 segundo)
-    const imagenes = document.getElementsByClassName('imagen');
+    const intervalo = 3000; // Intervalo en milisegundos (1 segundo)
+    const imagenes = document.getElementsByClassName('imagen_contenedor');
     let index = 0;
 
     function desplazarImagenes() {
