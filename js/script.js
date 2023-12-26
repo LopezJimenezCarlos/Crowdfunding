@@ -16,45 +16,100 @@ function scrollFunction() {
         barraSuperior.style.boxShadow= " 0px 10px 3px rgba(0, 0, 0, 0.2)";
     }   
 }
-window.onscroll = function() {
 
+window.onscroll = function() {
     scrollFunction();
 };
-// Supongamos que 'filas' es la respuesta del servidor
-/*var filas = respuestaDelServidor;
-
-var nombre = document.getElementById("Usuario");
-nombre.innerText = filas[0].nombre;*/
 
 function toggleBusqueda() {
     const campoBusqueda = document.getElementById('campoBusqueda');
     const linkBuscar = document.getElementById('linkBuscar');
+    const botonAceptarBusqueda = document.getElementById('botonAceptarBusqueda');
 
     campoBusqueda.classList.toggle('mostrar');
     campoBusqueda.style.display = campoBusqueda.classList.contains('mostrar') ? 'block' : 'none';
     campoBusqueda.focus();
-    linkBuscar.style.display = campoBusqueda.classList.contains('mostrar') ? 'none' : 'inline';
+    
+    if (campoBusqueda.classList.contains('mostrar')) {
+        linkBuscar.style.display = 'none';
+        botonAceptarBusqueda.style.display = 'inline';
+    } else {
+        linkBuscar.style.display = 'inline';
+        botonAceptarBusqueda.style.display = 'none';
+    }
 }
 
 window.onload = function() {
-    const intervalo = 3000; // Intervalo en milisegundos (1 segundo)
+    const intervalo = 3000;
     const imagenes = document.getElementsByClassName('imagen_contenedor');
     let index = 0;
 
     function desplazarImagenes() {
-        // Reiniciar opacidad de todas las imágenes
         for (let i = 0; i < imagenes.length; i++) {
             imagenes[i].style.opacity = 0;
             imagenes[i].style.zIndex = 0;
         }
 
-        // Aparecer la siguiente imagen
         imagenes[index].style.opacity = 1;
         imagenes[index].style.zIndex = 1;
 
-        // Actualizar el índice para la siguiente imagen
         index = (index + 1) % imagenes.length;
     }
 
     setInterval(desplazarImagenes, intervalo);
 };
+
+function searchInSite(query) {
+    const resultsContainer = document.getElementById('resultadosBusqueda');
+    const container = document.getElementById('resultadosContainer');
+
+    // Limpiar resultados anteriores
+    resultsContainer.innerHTML = '';
+
+    // Realizar búsqueda en todos los elementos de texto
+    const elements = document.querySelectorAll('p, h1, h2, h3, a');
+    const matchingElements = [];
+
+    elements.forEach(element => {
+        if (element.textContent.toLowerCase().includes(query.toLowerCase())) {
+            matchingElements.push(element);
+            element.id = 'resultado_' + matchingElements.length;
+        }
+    });
+
+    matchingElements.forEach(match => {
+        console.log(match.textContent);
+        const resultItem = document.createElement('li');
+        resultItem.textContent = match.textContent;
+        resultItem.setAttribute('onclick', `scrollToElement('${match.id}')`);
+        resultsContainer.appendChild(resultItem);
+    });
+
+    if (matchingElements.length > 0) {
+        // Mostrar resultados si hay coincidencias
+        container.classList.remove('ocultar');
+    } else {
+        // Ocultar resultados si no hay coincidencias
+        container.classList.add('ocultar');
+    }
+}
+
+// Función para desplazarse al elemento específico al hacer clic en un resultado
+function scrollToElement(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Función para realizar la búsqueda en tiempo real
+function realizarBusquedaEnTiempoReal() {
+    const query = document.getElementById('campoBusqueda').value.trim();
+    if (query !== '') {
+        // Llama a la función de búsqueda personalizada
+        searchInSite(query);
+    }
+}
+
+// Agrega un evento de escucha al campo de búsqueda para activar la búsqueda en tiempo real
+document.getElementById('campoBusqueda').addEventListener('input', realizarBusquedaEnTiempoReal);

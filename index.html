@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crowdfunding</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
 </head>
-  
 <body>
     <header>
         <nav>
             <ul class="barra_superior" id="barraSuperior">
+                <!-- Agrega un contenedor para el botón de búsqueda y otro para el botón de aceptar búsqueda -->
                 <li class="item_barra" id="buscarItem" onclick="toggleBusqueda()">
-                <input type="text" id="campoBusqueda" placeholder="Buscar">
-                <a class="nav__link" id="linkBuscar">Buscar</a>
+                    <input type="text" id="campoBusqueda" placeholder="Buscar">
+                    <a class="nav__link" id="linkBuscar">Buscar</a>
+                    <button id="botonAceptarBusqueda" style="display: none;" onclick="realizarBusqueda()">Aceptar
+                    <img src="lupa.png" height="30px" width="30px" ></button>
+                    <div id="resultadosContainer" class="ocultar">
+                    <ul id="resultadosBusqueda"></ul>
+                    </div>
                 </li>
                 <li class="item_barra"><a href="index.php" class="nav__link">Sobre Nosotros</a></li>
                 <li class="item_barra"><a href="#" class="nav__link">Donar</a></li>
@@ -24,41 +28,39 @@
             </ul>
         </nav>
     </header>
-    
+
     <div class="Inicio_container">
+        <ul id="resultadosBusqueda"></ul>
         <img src="ImagenInicio1.png" id="peluqueria">
         <h1>¡Bienvenido a Style Haven!</h1>
         <h2>¡Ayudanos!¡Recibirás un estilo único, transformación instantanea!</h2>
     </div>
+
     <main>
-    <div id="cont_imagenes">
-        <div class="imagen_contenedor ">
-        <img class="imagen" src="foto1.jpg" alt="Imagen 1">
-        <p class="imagen_description">¡Recibe un asesoramiento personalizado a cambio de lo que tu quieras!</p>
+        <div id="cont_imagenes">
+            <div class="imagen_contenedor ">
+                <img class="imagen" src="foto1.jpg" alt="Imagen 1">
+                <p class="imagen_description">¡Recibe un asesoramiento personalizado a cambio de lo que tu quieras!</p>
+            </div>
+            <div class="imagen_contenedor">
+                <img class="imagen" src="foto_estudiantes.jpg" alt="Imagen 2">
+                <p class="imagen_description">Ayuda a unos estudiantes a cumplir su sueño</p>
+            </div>  
+            <div class="imagen_contenedor">
+                <img class="imagen" src="agradecido.jpg" alt="Imagen 3">
+                <p class="imagen_description">Nadie será mas agradecido contigo que como Style Haven</p>
+            </div>
         </div>
-        <div class="imagen_contenedor">
-        <img class="imagen" src="foto_estudiantes.jpg" alt="Imagen 2">
-        <p class="imagen_description">Ayuda a unos estudiantes a cumplir su sueño</p>
-        </div>  
-        <div class="imagen_contenedor">
-        <img class="imagen" src="agradecido.jpg" alt="Imagen 3">
-        <p class="imagen_description">Nadie será mas agradecido contigo que como Style Haven</p>
-        </div>
-    </div>
 
-    <div class ="donaciones">
-        <h1 class = "total">{{DATA1}}</h1>
-    
-
-        <div class="donadores_principales">
-            {{DATA2}}
-        </div>
-    </div>      
-    
-          
-    
+        <div class="donaciones">
+            <h1 class="total">{{DATA1}}</h1>
+            <div class="donadores_principales">
+                {{DATA2}}
+            </div>
+        </div>      
     </main>
-<script src="js/script.js"></script>
-<script src="js/app.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
