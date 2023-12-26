@@ -145,7 +145,7 @@ body {
     z-index: -1;
 }
 
-/*Estilos formulario*/
+/*Inicio de Sesion*/
 *{
     margin: 0;
     padding: 0;
@@ -234,11 +234,30 @@ form p a {
     margin-left: 5px;
 }
 
+#signIn{
+    color: #04BD7D;
+    margin-left: 5px;
+}
+
+#tiene_cuenta{
+    color: #ffffff;
+    font-size: 13px;
+    text-align: left;
+}
+
 .btn-field{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    text-align: center; /* Centra los botones en el contenedor */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    flex-direction: column; /* Alinea los elementos en columna */
 }
+
+.content{
+    display: none;
+}
+
 #signUp:hover{
     background-color: #07563a;
     color: #ffffff;
@@ -247,6 +266,27 @@ form p a {
 }
 #signIn:hover{
     background-color: #a2a2a2;
+    transition: 0.3s;
+    
+}
+#enter {
+    background-color: #04BD7D;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    width: 15%;
+    height: 200px;
+    font-size: 16px;
+}
+
+#enter:hover{
+    background-color: #07563a;
+    color: #ffffff;
     transition: 0.3s;
     
 }
@@ -262,10 +302,11 @@ form p a {
     outline: 0;
     cursor: pointer;
     transition: background 1s;
+    margin-bottom: 10px;
 }
 
 .input-group{
-height: 250px;
+height: 200px;
 }
 
 .btn-field button.disable{
