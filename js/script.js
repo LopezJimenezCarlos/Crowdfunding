@@ -25,7 +25,8 @@ function toggleBusqueda() {
     const campoBusqueda = document.getElementById('campoBusqueda');
     const linkBuscar = document.getElementById('linkBuscar');
     const botonAceptarBusqueda = document.getElementById('botonAceptarBusqueda');
-
+    const resultsContainer = document.getElementById('resultadosBusqueda');
+    
     campoBusqueda.classList.toggle('mostrar');
     campoBusqueda.style.display = campoBusqueda.classList.contains('mostrar') ? 'block' : 'none';
     campoBusqueda.focus();
@@ -33,9 +34,12 @@ function toggleBusqueda() {
     if (campoBusqueda.classList.contains('mostrar')) {
         linkBuscar.style.display = 'none';
         botonAceptarBusqueda.style.display = 'inline';
+        resultsContainer.style.display = 'inline';
+        
     } else {
         linkBuscar.style.display = 'inline';
         botonAceptarBusqueda.style.display = 'none';
+        resultsContainer.style.display = 'none';
     }
 }
 
