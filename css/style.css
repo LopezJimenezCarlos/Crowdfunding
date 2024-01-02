@@ -122,12 +122,13 @@ body {
     text-decoration: none;
     color: white;
     font-size: 24px;
+    font-family: 'Poppins', sans-serif;
 }
 .nav__link:hover {
     text-decoration: none;
     color: rgb(158, 157, 157);
     font-size: 32px;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 
 .Inicio_container {
