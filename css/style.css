@@ -18,7 +18,7 @@ body {
 #campoBusqueda {
     display: none;
     padding: 5px;
-    width: 150px;
+    width: 170px;
     transition: width 1s;
 }
 
@@ -49,15 +49,15 @@ body {
 
 #resultadosContainer {
     position: absolute;
-    width: 350px;
+    width: 500px;
     max-height: 200px; /* Ajusta la altura máxima según tus necesidades */
     overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
     top: 100%;
     left: 0;
     z-index: 1001; /* Asegura que esté encima de la barra */
-    background-color: white; /* Puedes ajustar el color de fondo según tus preferencias */
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.8);
-    color: rgb(6, 5, 5);
+    background-color: rgb(41, 40, 40); /* Puedes ajustar el color de fondo según tus preferencias */
+    box-shadow: 0px 10px 10px rgba(244, 243, 243, 0.8);
+    color: rgb(254, 254, 254);
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
     border-radius: 10px;
@@ -86,7 +86,9 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    margin: 5px;
 }
+
 
 #campoBusqueda {
     padding: 8px; /* Ajusta el espacio interno según tus preferencias */
@@ -119,6 +121,13 @@ body {
 .nav__link {
     text-decoration: none;
     color: white;
+    font-size: 24px;
+}
+.nav__link:hover {
+    text-decoration: none;
+    color: rgb(158, 157, 157);
+    font-size: 32px;
+    transition: 0.5s;
 }
 
 .Inicio_container {
