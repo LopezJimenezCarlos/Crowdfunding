@@ -344,6 +344,43 @@ button:hover {
     color: #555; /* Cambio a gris más oscuro al pasar el ratón */
 }
 
+/*Donar*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 /*Principal*/
 main{
     display: flex;
@@ -462,3 +499,4 @@ main{
 .ocultar {
     display: none !important; /* Puedes ajustar esto según tus necesidades */
 }
+
