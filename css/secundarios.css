@@ -1,16 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-html {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
+/*Barra de navegación*/
 #buscarItem {
     position: relative;
 }
@@ -131,216 +119,10 @@ body {
     transition: 0.7s;
 }
 
-.Inicio_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 750px;
-    font-family: 'Poppins', sans-serif;
-}
-.principio{
-    font-family: 'Poppins', sans-serif;
-}
+/*Fin barra navegacion*/
 
-/* Resto de tu CSS permanece sin cambios */
-
-/* Imagen de fondo */
-#peluqueria {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.3;
-    z-index: -1;
-}
-/*Login*/
-body.login {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, #f4f4f4, #d3d3d3);
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.form-content {
-    background: linear-gradient(180deg, #fff, #f4f4f4);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
-
-#title {
-    color: #333;
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.input-group {
-    margin-top: 20px;
-}
-
-.input-field {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 15px 40px 15px 60px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    color: #333;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.input-field i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 20px;
-    color: #555;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
 
 button:hover {
-    background-color: #555;
-}
-
-#tiene_cuenta {
-    margin-top: 20px;
-    color: #333;
-    font-size: 14px;
-}
-
-#signIn {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-#signIn:hover {
-    color: #555;
-}
-
-
-
-/*Registro*/
-body.registro{
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(180deg, #f4f4f4, #d3d3d3); /* Degradado de gris claro a gris más oscuro */
-    color: #333; /* Texto gris oscuro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-form {
-    background-color:linear-gradient(180deg, #fff, #f4f4f4); /* Degradado de blanco a gris claro para el formulario */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sutil sombra gris */
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-}
-
-#title {
-    color: #333; /* Texto gris oscuro */
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.input-field {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 15px 40px 15px 60px; /* Ajusta el padding para dejar espacio para el icono */
-    border: 2px solid #ccc; /* Borde gris */
-    border-radius: 8px;
-    background-color: #f9f9f9; /* Fondo gris claro para los campos de entrada */
-    color: #333; /* Texto gris oscuro */
-    font-size: 16px;
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
-}
-
-.input-field i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 15px;
-    color: #555; /* Color del icono */
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #333; /* Fondo gris oscuro para el botón */
-    color: #fff; /* Texto blanco en el botón */
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-    background-color: #555; /* Cambio a fondo gris más oscuro al pasar el ratón */
-}
-
-#tiene_cuenta {
-    margin-top: 20px;
-    color: #333; /* Texto gris oscuro para el mensaje */
-    font-size: 14px;
-}
-
-#signIn {
-    color: #333; /* Enlace gris oscuro */
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-#signIn:hover {
     color: #555; /* Cambio a gris más oscuro al pasar el ratón */
 }
 
@@ -384,119 +166,170 @@ button:hover {
 /*Principal*/
 main{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    background-color: #F4EAE0;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    background-color: rgb(251, 251, 251); /* 70% de opacidad */
-    height: 99.9;
-    border-top-right-radius: 40px ;
-    border-top-left-radius: 40px ;
-    border: 2px solid rgba(255, 254, 254, 0);; /* 70% de opacidad */
-}
-#cont_imagenes {
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    margin: 0 auto; /* Centrar horizontalmente */
-    position: relative; /* Agregado para manejar las imágenes de forma absoluta */
-   
-    
-}
 
-.imagen_contenedor {
-    width: 40%;
-    height: 60%;
-    object-fit: cover;
-    position: absolute; /* Ajustado a posición absoluta */
-    top: 0100;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+}
+body.login {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: linear-gradient(180deg, #f4f4f4, #d3d3d3);
+    color: #333;
     display: flex;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-
-#cont_imagenes .imagen_contenedor {
-    width: 50%;
-    height: 100%;
-    left: 50%;
-    top: 50%;
-    border-radius: 8px;
-    transform: translate(-50%, -50%);
-    transition: opacity 1s ease-in-out;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.imagen{
+.form-content {
+    background: linear-gradient(180deg, #fff, #f4f4f4);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     width: 80%;
-    height: 60%;
-    border-radius: 7px;
-}
-
-.imagen_description{
-    font-size: 24px;
-    color: #050505;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Poppins', sans-serif
-}
-.donaciones{
-    background-color: #F4EAE0;
-    height: 100%;
-    width: 100%;
-    border-radius: 15px;
+    max-width: 400px;
     
-}   
-.total{
-    background-color: #F4EAE0;
-    border-radius: 15px;
-    font-size: 34px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    color:#000000;
-    margin: 30px;
-    font-family: 'Poppins', sans-serif;
 }
-.contenedor_donadores {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no hay espacio suficiente */
-    justify-content: space-evenly; /* Distribuye los elementos con espacio entre ellos */
-    /* Puedes ajustar estas propiedades según tus necesidades */
-    margin: 30px;
-    font-family: 'Poppins', sans-serif
+#title {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.input-group {
+    margin-top: 20px;
 }
 
-.donador{
+.input-field{
+    position: relative;
+    margin-bottom: 20px;
+
+}
+input {
+    padding: 15px 40px 15px 60px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    color: #555;
+}
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover {
+    background-color: #555;
+}
+#tiene_cuenta {
+    margin-top: 20px;
+    color: #333;
+    font-size: 14px;
+}
+#signIn {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+#signIn:hover {
+    color: #555;
+}
+/*Registro*/
+body.registro{
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #f4f4f4, #d3d3d3); /* Degradado de gris claro a gris más oscuro */
+    color: #333; /* Texto gris oscuro */
     display: flex;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
-    background-color: #000000;
-    padding: 10px;
-    height: 100px;
-    width: 300px;
-    border-radius: 7px;
-    font-size: 24px;
-    font-weight: bold;
-    color:#ffffff;
-    text-shadow: #000000  1px 1px 2px;
+    align-items: center;
+    height: 100vh;
+}
+form {
+    background-color:linear-gradient(180deg, #fff, #f4f4f4); /* Degradado de blanco a gris claro para el formulario */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sutil sombra gris */
+    width: 80%;
+    max-width: 400px;
     text-align: center;
-    box-shadow: #000000 5px 5px 15px;
-    margin: 10px;
-    font-family: 'Poppins', sans-serif
+}
+#title {
+    color: #333; /* Texto gris oscuro */
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    padding: 15px 40px 15px 60px; /* Ajusta el padding para dejar espacio para el icono */
+    border: 2px solid #ccc; /* Borde gris */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Fondo gris claro para los campos de entrada */
+    color: #333; /* Texto gris oscuro */
+    font-size: 16px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    color: #555; /* Color del icono */
+}
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #333; /* Fondo gris oscuro para el botón */
+    color: #fff; /* Texto blanco en el botón */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+button:hover {
+    background-color: #555; /* Cambio a fondo gris más oscuro al pasar el ratón */
 }
 
-.mostrar {
-    display: block !important; /* Puedes ajustar esto según tus necesidades */
+#tiene_cuenta {
+    margin-top: 20px;
+    color: #333; /* Texto gris oscuro para el mensaje */
+    font-size: 14px;
 }
-
-.ocultar {
-    display: none !important; /* Puedes ajustar esto según tus necesidades */
+#signIn {
+    color: #333; /* Enlace gris oscuro */
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
 }
-
+#signIn:hover {
+    color: #555; /* Cambio a gris más oscuro al pasar el ratón */
+}

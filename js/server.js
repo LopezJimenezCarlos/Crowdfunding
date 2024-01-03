@@ -62,8 +62,7 @@ function realizarConsultas(res) {
                                 const contenedorDonadoresHTML = '<div class="contenedor_donadores">' +
                                     donadores.map((donador) => `
                                         <div class="donador">
-                                            <p>${donador.nombre} ${donador.apellidos}</p>
-                                            <p>${donador.totalDonado} €</p>
+                                            <p>${donador.nombre} ${donador.apellidos} = ${donador.totalDonado} €</p>
                                         </div>
                                     `).join('') +
                                     '</div>';
