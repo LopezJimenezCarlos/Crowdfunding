@@ -93,7 +93,7 @@ function serveStaticFile(res, filePath, contentType = 'application/octet-stream'
         '.html': 'text/html',
         '.css': 'text/css',
         '.js': 'text/javascript',
-        // Puedes agregar más tipos de mime si necesitas servir otros tipos de archivos
+        
     };
 
     contentType = mimeTypes[extname] || contentType;

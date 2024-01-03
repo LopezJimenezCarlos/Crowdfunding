@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crowdfunding</title>
+        <link href="css/secundarios.css" rel="stylesheet" type="text/css">
+        <title>Sobre Nosotros</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="barra_superior" id="barraSuperior">
+                <!-- Agrega un contenedor para el botón de búsqueda y otro para el botón de aceptar búsqueda -->
+                <li class="item_barra" id="buscarItem" onclick="toggleBusqueda()">
+                    <input type="text" id="campoBusqueda" placeholder="Buscar">
+                    <a class="nav__link" id="linkBuscar">Buscar</a>
+                    <button id="botonAceptarBusqueda" style="display: none;" onclick="realizarBusqueda()">Aceptar
+                    <img src="lupa.png" height="30px" width="40px" ></button>
+                    <div id="resultadosContainer" class="ocultar">
+                    <ul id="resultadosBusqueda"></ul>
+                    </div>
+                </li>
+                <li class="item_barra"><a href="sobrenosotros.html" class="nav__link">Sobre Nosotros</a></li>
+                <li class="item_barra"><a href="indexDonar.html" class="nav__link">Donar</a></li>
+                <li><a href="#"><img src="logo1.png" id="logo" height="95" width="100px"></a></li>
+                <li class="item_barra"><a href="#" class="nav__link">Cómo funcionamos</a></li>
+                <li class="item_barra"><a href="indexLogin.html" class="nav__link">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="titulo_nosotros">
+        <h2>Asi es como somos</h2>
+    </div>
+    <div class = "intro_nosotros">
+        <p>Somos estudiantes de Ingeniería Informática en la Universidad Europea. Nos apasiona el mundo de la informática y, curiosamente, también somos aficionados a la peluquería.</p>
+    
+        <div class = "contendor_personal">
+            <div class ="imagen_nombre">
+                <img class ="perfilnuestro" src="carlos.jpg" alt="Foto de Carlos López" width="150">
+                <p>Carlos López</p>
+                <div class ="redes">
+                    <a href="https://www.instagram.com/lopezzzcarlos/"><img src="instagram.png" class ="logo_redes"></a>
+                    <a href="https://twitter.com/carlitossmdz"><img src="gorjeo.png" class ="logo_redes"></a>
+                    <a href="https://www.linkedin.com/in/carlos-l%C3%B3pez-jim%C3%A9nez-a5165b265/"><img src="linkedin.png" class ="logo_redes"></a>
+                </div>
+            </div>
+            <div class ="imagen_nombre">
+                <img class ="perfilnuestro"src="david.jpg" alt="Foto de David Rodríguez" width="150">
+                <p>David Rodríguez</p>
+                <div class ="redes">
+                    <a href="https://www.instagram.com/david_rd25/"><img src="instagram.png" class ="logo_redes"></a>
+                    <a href="https://twitter.com/DavidRd25"><img src="gorjeo.png" class ="logo_redes"></a>
+                    <a href="#"><img src="linkedin.png" class ="logo_redes"></a>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="interes_nosotros">
+        <h2>Intereses</h2>
+        <p>Nuestros intereses van desde el desarrollo de software hasta las últimas tendencias en cortes de cabello y estilos de peluquería.</p>
+    </div>
+
+    <div class="redes_nosotros">
+        <h2>Redes Sociales</h2>
+        <ul>
+            <li><a href="https://twitter.com/carlos_lopez" target="_blank">Twitter de Carlos</a></li>
+            <li><a href="https://instagram.com/david_rodriguez" target="_blank">Instagram de David</a></li>
+        </ul>
+    </div>
+
+    <div class="contacto_nosotros">
+        <h2>Contacto</h2>
+        <p>¡Nos encantaría saber de ti! Puedes ponerte en contacto con nosotros a través de nuestro correo electrónico: <a href="mailto:info@tudominio.com">info@tudominio.com</a>.</p>
+    </class>
+
+</body>
+</html>
