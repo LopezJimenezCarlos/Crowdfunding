@@ -1,5 +1,4 @@
 
-
 function scrollFunction() {
     var barraSuperior = document.getElementById("barraSuperior");
     var logo = document.getElementById("logo");
@@ -9,12 +8,14 @@ function scrollFunction() {
         logo.style.width = "60px"; // Tamaño más pequeño al hacer scroll        
         logo.style.height = "50px"; // Tamaño más pequeño al hacer scroll
         logo.style.transition = " 0.6s"; // Transición de 0.5 segundos
-        logo.style.position = "relative"; // Transición de 0.5 segundos
+        logo.style.position = "relative"; // TransicióWn de 0.5 segundos
         barraSuperior.style.boxShadow=" 0px 5px 3px rgba(0, 0, 0, 0.2)";
     } else {
         barraSuperior.style.height = "100px"; // Altura normal en la parte superior
         logo.style.width = "100px"; // Tamaño más pequeño al hacer scroll        
         logo.style.height = "95px"; // Tamaño más pequeño al hacer scroll
+        logo.style.transition = " 0.6s";
+        logo.style.position = "relative"
         barraSuperior.style.boxShadow= " 0px 10px 3px rgba(0, 0, 0, 0.2)";
     }   
 }
@@ -120,3 +121,18 @@ function realizarBusquedaEnTiempoReal() {
 // Agrega un evento de escucha al campo de búsqueda para activar la búsqueda en tiempo real
 document.getElementById('campoBusqueda').addEventListener('input', realizarBusquedaEnTiempoReal);
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://localhost:4000/clientes', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        
+    })
+    .then(response => response.json())
+    .then(clientes => console.log(clientes))
+    .catch(error => console.error('Error:', error));
+    
+    
+});
