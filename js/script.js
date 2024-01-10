@@ -1,4 +1,4 @@
-
+const total =document.getElementById("total")
 function scrollFunction() {
     var barraSuperior = document.getElementById("barraSuperior");
     var logo = document.getElementById("logo");
@@ -123,16 +123,42 @@ document.getElementById('campoBusqueda').addEventListener('input', realizarBusqu
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://localhost:4000/clientes', {
+const contenedorPrincipal = document.querySelector('.contenedor_donadores');
+    fetch('http://localhost:4000/donaciones', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
-        
     })
     .then(response => response.json())
-    .then(clientes => console.log(clientes))
+    .then(data => {
+        const totalElement = document.getElementById('total');
+
+        if (totalElement) {
+            // Asegúrate de que el elemento con el id 'total' existe
+            totalElement.innerHTML = "Cantidad total donada: " + data.suma_total + " €";
+        } else {
+            console.error("Elemento con id 'total' no encontrado.");
+        }
+    })
     .catch(error => console.error('Error:', error));
-    
-    
+    fetch('http://localhost:4000/donadores', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        for (let i = 0; i < data.length && i <= data.length; i++) {
+            const donador = document.createElement("div");
+            donador.classList.add("donador");  
+            const texto = document.createElement("p");
+            texto.innerText = data[i].Nombre + ": " + data[i].Donacion+ " €";
+            donador.appendChild(texto);  // Corregido el orden de los elementos
+            contenedorPrincipal.appendChild(donador);
+        }
+    })
+    .catch(error => console.error('Error:', error));
 });
+

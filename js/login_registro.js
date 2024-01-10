@@ -1,21 +1,29 @@
 // Pertenece al Inicio de Sesion
 
-let signUp = document.getElementById("signUp");
-let signIn = document.getElementById("signIn");
-let nameInput = document.getElementById("nameInput");
-let title = document.getElementById("title");
 
-signIn.onclick = function () {
-    nameInput.style.maxHeight = "0";
-    title.innerHTML = "Login";
-    signUp.classList.add("disanble");
-    signIn.classList.remove("disanble");
-}
+document.getElementById('enter').addEventListener('click', function () {
+    const usuarioLogin = {
+        correo: document.getElementById('correo').value,
+        contrasena: document.getElementById('contrasena').value
+    };
 
-signUp.onclick = function () {
-    nameInput.style.maxHeight = "100px";
-    title.innerHTML = "Registro";
-    signUp.classList.remove("disanble");
-    signIn.classList.add("disanble");
-    
-}
+    fetch('http://localhost:4000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(usuarioLogin)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('mensaje-estado').textContent = 'Inicio de sesión exitoso';
+        } else {
+            document.getElementById('mensaje-estado').textContent = data.message;
+        }
+    })
+    .catch(error => {
+        document.getElementById('mensaje-estado').textContent = 'Error en el inicio de sesión';
+    });
+});
+

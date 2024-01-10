@@ -30,30 +30,68 @@ db.connect((err) => {
 app.use(express.json());
 
 
-// Ruta para obtener todos los clientes
-app.get('/clientes', (req, res) => {
-    const query = 'SELECT * FROM clientes';
+app.get('/donaciones', (req, res) => {
+    const query = 'SELECT SUM(Donacion) AS suma_total FROM clientes';
     db.query(query, (err, results) => {
         if (err) {
             res.status(500).send('Error en el servidor');
         } else {
-            res.json(results);
+            // La respuesta puede contener varias filas, pero como estamos usando SUM, debería haber una sola fila con la suma total
+            const sumaTotal = results[0].suma_total || 0; // Accede al resultado de la suma_total
+            res.json({ suma_total: sumaTotal });
+            console.log(sumaTotal)
+        }
+    });
+});
+app.get('/donadores', (req, res) => {
+    const query = 'SELECT * FROM clientes ORDER BY Donacion DESC LIMIT 10';
+    db.query(query, (err, results) => {
+        if (err) {
+            res.status(500).send('Error en el servidor');
+        } else {
+            // La respuesta puede contener varias filas, pero como estamos usando SUM, debería haber una sola fila con la suma total
+        var donadores = results // Accede al resultado de la suma_total
+        Donjsn = res.json(donadores);
+        console.log(donadores)
+        }
+    });
+});
+app.post('/login', (req, res) => {
+    const correo = req.body.correo;
+    const contrasena = req.body.contrasena;
+  
+    const query = 'SELECT * FROM clientes WHERE Correo = ? AND Password = ?';
+    db.query(query, [correo, contrasena], (err, results) => {
+      if (err) {
+        res.status(500).json({ success: false, message: 'Error en el servidor' });
+      } else {
+        if (results.length > 0) {
+          res.json({ success: true, message: 'Inicio de sesión exitoso', correo: correo });
+        } else {
+          res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
+        }
+      }
+    });
+  });
+
+  app.post('/login', (req, res) => {
+    const correo = req.body.correo;
+    const contrasena = req.body.contrasena;
+
+    const query = 'SELECT * FROM clientes WHERE correo = ? AND contrasena = ?';
+    db.query(query, [correo, contrasena], (err, results) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error en el servidor' });
+        } else {
+            if (results.length > 0) {
+                res.json({ success: true, message: 'Inicio de sesión exitoso', correo: correo });
+            } else {
+                res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
+            }
         }
     });
 });
 
- app.get('/login', (req, res) => {
-        const query = 'SELECT * FROM clientes';
-    
-        db.query(query, [correo, contrasena], (err, results) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Error en el servidor');
-            } else {
-                console.log(results);
-            }
-        });
-    });
 
 // Ruta para registrar un nuevo usuario
 /*app.post('/registrar', (req, res) => {

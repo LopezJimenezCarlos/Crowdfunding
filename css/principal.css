@@ -228,7 +228,7 @@ main{
     border-radius: 15px;
     
 }   
-.total{
+#total{
     background-color: #F4EAE0;
     border-radius: 15px;
     font-size: 34px;
@@ -252,7 +252,7 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #000000;
+    background-color: #a16e2c;
     padding: 10px;
     height: 100px;
     width: 300px;
