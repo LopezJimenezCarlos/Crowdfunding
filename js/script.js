@@ -1,3 +1,5 @@
+
+
 function scrollFunction() {
     var barraSuperior = document.getElementById("barraSuperior");
     var logo = document.getElementById("logo");
@@ -117,3 +119,4 @@ function realizarBusquedaEnTiempoReal() {
 
 // Agrega un evento de escucha al campo de búsqueda para activar la búsqueda en tiempo real
 document.getElementById('campoBusqueda').addEventListener('input', realizarBusquedaEnTiempoReal);
+
