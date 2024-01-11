@@ -14,45 +14,54 @@
     <header>
         <nav>
             <ul class="barra_superior" id="barraSuperior">
-                <li class="item_barra" id="buscarItem" onclick="toggleBusqueda()">
-                <input type="text" id="campoBusqueda" placeholder="Buscar">
-                <a class="nav__link" id="linkBuscar">Buscar</a>
-                </li>
-                <li class="item_barra"><a href="index.php" class="nav__link">Sobre Nosotros</a></li>
+                
+                <li class="item_barra"><a href="sobrenosotros.html" class="nav__link">Sobre Nosotros</a></li>
                 <li class="item_barra"><a href="indexDonar.html" class="nav__link">Donar</a></li>
                 <li><a href="index.html"><img src="logo1.png" id="logo" height="95" width="100px"></a></li>
                 <li class="item_barra"><a href="#" class="nav__link">Cómo funcionamos</a></li>
-                <li class="item_barra"><a href="indexLogin.html" class="nav__link">Iniciar Sesión</a></li>
+                <li id="loginItem" class="item_barra"><a href="indexLogin.html" class="nav__link">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>
-        <div class = "container">
-            <div class="form-content">
-                <h1 id = "title">Registro</h1>
-                <form>
-                    <div class = "input-group">
-                        <div class = "input-field" id = "nameInput">
-                            <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Nombre" required>
-                        </div>
-                        <div class = "input-field">
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="email" placeholder="Correo" required>
-                        </div>
-                        <div class = "input-field">
-                            <i class="fa-solid fa-lock"></i>
-                            <input type="password" placeholder="Contraseña" required>
-                        </div>
+    <div class="container">
+        <div class="form-content">
+            <h1 id="title">Registro</h1>
+            <form id="formulario_registro">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input id="nombre" placeholder="Nombre" required>
                     </div>
-                    <div class = "btn-field">
-                        <button id = "enter" type="submit">Enter</button>
-                            <form p id="tiene_cuenta">¿Ya tienes cuenta?<a href="indexLogin.html" id="signIn"> click aqui</a></form p>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input id="apellidos" placeholder="Apellidos" required>
                     </div>
-                </form>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input id="correo" type="email" placeholder="Correo" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input id="contrasena1" type="password" placeholder="Contraseña" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input id="contrasena2" type="password" placeholder="Repetir contraseña" required>
+                    </div>
+                </div>
+                <div class="btn-field">
+                    <button type="submit">Enter</button>
+                    <div id="mensaje-estado" style="color: red; margin-top: 10px;"></div>
+                </div>
+            </form>
+            <div id="pantalla-carga">
+                <p>Cargando...</p>
+                <!-- Agrega aquí cualquier animación o diseño que desees -->
             </div>
         </div>
+    </div>
     
-    <script src="js/login_registro.js"></script>    
-    
+    <script src="js/registro.js"></script>    
+    <script src="js/script.js"></script>
 </body>
 </html>
