@@ -91,6 +91,49 @@ app.post('/registrar', (req, res) => {
         }
     });
 });
+app.get('/success', (req, res) => {
+    // Lógica para manejar una donación exitosa
+    res.send('¡Donación exitosa!');
+});
+
+app.get('/cancel', (req, res) => {
+    // Lógica para manejar una donación cancelada
+    res.send('Donación cancelada');
+});
+
+
+app.post('/procesar_donacion', (req, res) => {
+    const { cantidad, metodoPago, comentario, correoUsuario } = req.body;
+
+    // Insertar la donación en la tabla de donaciones
+    const queryDonaciones = `
+        INSERT INTO donaciones (Cantidad, MetodoPago, Comentario, CorreoUsuario)
+        VALUES (?, ?, ?, ?);
+    `;
+
+    db.query(queryDonaciones, [cantidad, metodoPago, comentario, correoUsuario], (err, resultDonaciones) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error al procesar la donación');
+        } else {
+            // Actualizar la cantidad donada en la tabla de clientes
+            const queryClientes = `
+                UPDATE clientes
+                SET Donacion = Donacion + ?
+                WHERE Correo = ?;
+            `;
+
+            db.query(queryClientes, [cantidad, correoUsuario], (errClientes, resultClientes) => {
+                if (errClientes) {
+                    console.error(errClientes);
+                    res.status(500).send('Error al actualizar la cantidad donada en la tabla de clientes');
+                } else {
+                    res.status(201).json({ mensaje: 'Donación procesada con éxito' });
+                }
+            });
+        }
+    });
+});
 
 
 app.listen(port, () => {

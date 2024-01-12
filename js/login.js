@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     login.onsubmit = function(event) {
         event.preventDefault();
 
-
-
         const usuarioLogin = {
             correo: document.getElementById('correo').value,
             contrasena: document.getElementById('contrasena').value
@@ -21,7 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => {
             if (response.ok) {
+                // Obtener el correo del usuario desde el formulario de login
+                const correoUsuario = document.getElementById('correo').value;
+
+                // Almacenar el correo del usuario en el sessionStorage
+                sessionStorage.setItem('correoUsuario', correoUsuario);
                 sessionStorage.setItem('usuarioLogeado', 'true');
+                
                 return response.text();
             } else {
                 throw new Error('Error en el inicio de sesión');
@@ -39,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .finally(() => {
             // Ocultar la pantalla de carga después de completar el proceso
-           
         });
     };
 });
