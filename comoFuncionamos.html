@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionamiento de Nuestro Servicio</title>
+    <link href="css/principal.css" rel="stylesheet" type="text/css">
+    <link href="css/secundarios.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul class="barra_superior" id="barraSuperior">
+                <!-- Agrega un contenedor para el botón de búsqueda y otro para el botón de aceptar búsqueda -->
+                <li class="item_barra" id="buscarItem" onclick="toggleBusqueda()">
+                    <input type="text" id="campoBusqueda" placeholder="Buscar">
+                    <a class="nav__link" id="linkBuscar">Buscar</a>
+                    <button id="botonAceptarBusqueda" style="display: none;" onclick="realizarBusqueda()">Aceptar
+                    <img src="lupa.png" height="30px" width="40px" ></button>
+                    <div id="resultadosContainer" class="ocultar">
+                    <ul id="resultadosBusqueda"></ul>
+                    </div>
+                </li>
+                <li class="item_barra"><a href="sobrenosotros.html" class="nav__link">Sobre Nosotros</a></li>
+                <li class="item_barra"><a href="indexDonar.html" class="nav__link">Donar</a></li>
+                <li><a href="index.html"><img src="logo1.png" id="logo" height="95" width="100px"></a></li>
+                <li class="item_barra"><a href="#" class="nav__link">Cómo funcionamos</a></li>
+                <li id="loginItem" class="item_barra"><a href="indexLogin.html" class="nav__link">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="funcionamos">
+        <h1>Nuestro Servicio de Cortes de Pelo</h1>
+
+        <div class="imagenFuncionamos">
+            <img src="ImagenInicio1.png" alt="Imagen" width="600">
+            <p>Somos apasionados por ofrecer cortes de pelo de calidad en un ambiente acogedor y moderno.</p>
+        </div>
+
+        <div class="comoFunciona">
+            <h2>¿Cómo Funcionamos?</h2>
+
+            <div class="paso">
+            
+                <p> 1. Solicita tu cita a través de nuestra página web o llámanos al 987 123 567.</p>
+            </div>
+
+            <div class="paso">
+                
+                <p> 2. Ven a nuestro local y disfruta de un corte de pelo personalizado por nosotros.</p>
+            </div>
+
+            <div class="paso">
+                
+                <p> 3. Paga fácilmente en el local o a través de nuestra plataforma en línea.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
