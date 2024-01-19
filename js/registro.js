@@ -27,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: JSON.stringify(usuario)
         })
+        .then(correoUsuario = document.getElementById('correo').value)
+        /*Lo guardamos en el sessionStorage para poder usarlo en la página de donaciones*/
         .then(sessionStorage.setItem('usuarioLogeado', 'true')) 
+        .then(sessionStorage.setItem('correoUsuario', correoUsuario))
         .then(response => response.json())
         .then(data => alert('Usuario registrado con éxito'))
         .then(window.location.href = 'index.html')

@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('mensaje-estado').textContent = error.message;
         })
         .finally(() => {
-            // Ocultar la pantalla de carga después de completar el proceso
+            
         });
     };
 });

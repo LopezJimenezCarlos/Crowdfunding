@@ -36,7 +36,7 @@ app.get('/donaciones', (req, res) => {
         if (err) {
             res.status(500).send('Error en el servidor');
         } else {
-            // La respuesta puede contener varias filas, pero como estamos usando SUM, debería haber una sola fila con la suma total
+          
             const sumaTotal = results[0].suma_total || 0; // Accede al resultado de la suma_total
             res.json({ suma_total: sumaTotal });
             
@@ -44,13 +44,13 @@ app.get('/donaciones', (req, res) => {
     });
 });
 app.get('/donadores', (req, res) => {
-    const query = 'SELECT * FROM clientes ORDER BY Donacion DESC LIMIT 10';
+    const query = 'SELECT * FROM clientes WHERE  Donacion > 0 ORDER BY Donacion DESC LIMIT 10';
     db.query(query, (err, results) => {
         if (err) {
             res.status(500).send('Error en el servidor');
         } else {
-            // La respuesta puede contener varias filas, pero como estamos usando SUM, debería haber una sola fila con la suma total
-        var donadores = results // Accede al resultado de la suma_total
+            
+        var donadores = results 
         Donjsn = res.json(donadores);
         }
     });

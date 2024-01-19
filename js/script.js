@@ -95,6 +95,10 @@ function searchInSite(query) {
     if (matchingElements.length > 0) {
         // Mostrar resultados si hay coincidencias
         container.classList.remove('ocultar');
+
+        resultsContainer.addEventListener('click', function() {
+            container.classList.add('ocultar');
+        });
     } else {
         // Ocultar resultados si no hay coincidencias
         container.classList.add('ocultar');
@@ -113,12 +117,10 @@ function scrollToElement(elementId) {
 function realizarBusquedaEnTiempoReal() {
     const query = document.getElementById('campoBusqueda').value.trim();
     if (query !== '') {
-        // Llama a la función de búsqueda personalizada
         searchInSite(query);
     }
 }
 
-// Agrega un evento de escucha al campo de búsqueda para activar la búsqueda en tiempo real
 document.getElementById('campoBusqueda').addEventListener('input', realizarBusquedaEnTiempoReal);
 
 
@@ -135,7 +137,6 @@ const contenedorPrincipal = document.querySelector('.contenedor_donadores');
         const totalElement = document.getElementById('total');
 
         if (totalElement) {
-            // Asegúrate de que el elemento con el id 'total' existe
             totalElement.innerHTML = "Cantidad total donada: " + data.suma_total + " €";
         } else {
             console.error("Elemento con id 'total' no encontrado.");
@@ -167,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginItem = document.getElementById('loginItem');
 
     // Función para cerrar sesión
-   
 
     // Cambiar dinámicamente el contenido del enlace de inicio de sesión
     function actualizarEstadoLogin() {
@@ -184,6 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function cerrarSesion() {
     sessionStorage.removeItem('usuarioLogeado');
-    // Redirigir a la página de inicio de sesión o a donde desees después de cerrar sesión
+    // Redirigir a la página de inicio 
     window.location.href = 'indexLogin.html';
 }

@@ -37,7 +37,6 @@ function enviarDonacionAlServidor(cantidad, metodoPago, comentario, correoUsuari
         return response.json();
     })
     .then(data => {
-        // Puedes manejar la respuesta del servidor aquí si es necesario.
         console.log(data);
 
         // Redirige a PayPal después de manejar la respuesta del servidor.
@@ -46,6 +45,30 @@ function enviarDonacionAlServidor(cantidad, metodoPago, comentario, correoUsuari
     })
     .catch(error => {
         console.error('Error:', error.message);
-        // Puedes mostrar un mensaje de error al usuario si lo deseas.
+        
     });
+}
+document.addEventListener('DOMContentLoaded', function () {
+    const usuarioLogeado = sessionStorage.getItem('usuarioLogeado') === 'true';
+    const loginItem = document.getElementById('loginItem');
+
+    // Función para cerrar sesión
+
+    // Cambiar dinámicamente el contenido del enlace de inicio de sesión
+    function actualizarEstadoLogin() {
+        if (usuarioLogeado) {
+            loginItem.innerHTML = '<a href="#" class="nav__link" onclick="cerrarSesion()">Cerrar Sesión</a>';
+        } else {
+            loginItem.innerHTML = '<a href="indexLogin.html" class="nav__link">Iniciar Sesión</a>';
+        }
+    }
+   
+    actualizarEstadoLogin();
+
+   
+});
+function cerrarSesion() {
+    sessionStorage.removeItem('usuarioLogeado');
+    // Redirigir a la página de inicio 
+    window.location.href = 'indexLogin.html';
 }
